@@ -74,8 +74,9 @@ public class ResponderActivity extends AppCompatActivity {
      * Sets the next question
      */
     private void next() {
-        int numOfQuestions = 25; // Max 41
+        int numOfQuestions = 25; // 25 Questions for testing. Total number of questions is 41. Not necesary to use all of them.
         if(questionNumberLock == questionNumber && questionNumber <= numOfQuestions) {
+            questionLabel.setText("Pregunta" + (questionNumber + 1) + "\n");
             if (questionNumber < 5) {
                 questionLabel.setText(staticQuestions[questionNumber]);
             } else {
@@ -91,6 +92,9 @@ public class ResponderActivity extends AppCompatActivity {
         questionNumber++;
     }
 
+    /**
+     * Store the question in the history
+     */
     private void store(){
         if(Objects.equals(respuestaText.getText().toString(), "")){
             respuestaText.setError("Completa la respuesta");
