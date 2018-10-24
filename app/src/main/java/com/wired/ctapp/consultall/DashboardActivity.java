@@ -10,8 +10,6 @@ import android.view.View;
 
 import com.wired.ctapp.consultall.com.wired.ctapp.consultall.utils.Project;
 
-import java.util.ArrayList;
-
 public class DashboardActivity extends AppCompatActivity {
 
     private Adapter mAdapter;

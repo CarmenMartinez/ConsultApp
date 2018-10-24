@@ -41,12 +41,6 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
-     * Trying push
-     *
-     * from local repository.
-     */
-
-    /**
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
@@ -56,7 +50,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
+            "carlos.soto@empresaperrona.com:abcdef",
+            "carmen.mtz@empresaperrona.com:abcdef",
+            "denisse.galindo@empresaperrona.com:abcdef"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
