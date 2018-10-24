@@ -29,6 +29,11 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".DashboardActivity" />
+        <activity
+            android:name=".CaptureProjectActivity"
+            android:label="@string/title_activity_capture_project"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
