@@ -1,5 +1,6 @@
 package com.wired.ctapp.consultall.projects;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,8 @@ import java.util.Stack;
 
 public class ResponderActivity extends AppCompatActivity {
 
+    public static final String PROJECT_NAME = "PROJECT_NAME";
+
     private TextView questionLabel;
     private EditText respuestaText;
     private Button nextPregunta;
@@ -35,8 +38,15 @@ public class ResponderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_responder);
+
+        Intent i = getIntent();
+        String projectName = i.getStringExtra(ResponderActivity.PROJECT_NAME);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_responder);
+        toolbar.setTitle(projectName);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         respuestaText = (EditText) findViewById(R.id.text_pregunta_responder);
         questionLabel = (TextView) findViewById(R.id.lbl_pregunta_responder);
