@@ -56,7 +56,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
+            "carlos.soto@empresaperrona.com:abcdef", "carmen.mtz@empresaperrona.com:abcdef",
+            "denisse.galindo@empresaperrona.com:abcdef"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -167,7 +168,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (!TextUtils.isEmpty(password) || !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
@@ -184,6 +185,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             cancel = true;
         }
 
+
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -191,11 +193,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
-            Intent intent = new Intent(this, DashboardActivity.class);
-            startActivity(intent);
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
+            for (String credential : DUMMY_CREDENTIALS) {
+                String[] pieces = credential.split(":");
+                if (pieces[0].equals(email)) {
+                    // Account exists, return true if the password matches.
+                    if (pieces[1].equals(password)) {
+                        showProgress(true);
+                        Intent intent = new Intent(this, DashboardActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
+            mPasswordView.setError(getString(R.string.error_wrong_email_or_password));
+
 
         }
     }
