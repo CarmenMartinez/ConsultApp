@@ -33,9 +33,9 @@
             android:name=".projects.ResponderActivity"
             android:label="@string/title_activity_responder"
             android:theme="@style/AppTheme.NoActionBar">
-                <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.wired.ctapp.consultall.DashboardActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wired.ctapp.consultall.DashboardActivity" />
         </activity>
     </application>
 
