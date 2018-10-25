@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.wired.ctapp.consultall.com.wired.ctapp.consultall.utils.Project;
+import com.wired.ctapp.consultall.projects.ResponderActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 

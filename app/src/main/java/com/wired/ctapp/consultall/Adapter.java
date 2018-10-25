@@ -53,7 +53,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, DetailActivity.class);
+                Intent i = new Intent(context, ResponderActivity.class);
                 i.putExtra(ResponderActivity.PROJECT_NAME, h.name.getText().toString());
                 context.startActivity(i);
             }
