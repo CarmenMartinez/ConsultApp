@@ -38,10 +38,10 @@
             android:padding="4dp" />
 
         <TextView
-            android:id="@+id/textAddress"
+            android:id="@+id/textCustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/address"
+            android:text="@string/customer"
             android:layout_toEndOf="@id/logo"
             android:layout_below="@+id/textName"
             android:padding="4dp"
@@ -49,11 +49,11 @@
             />
 
         <TextView
-            android:id="@+id/valueAddress"
+            android:id="@+id/valueCustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/add_address"
-            android:layout_toEndOf="@+id/textAddress"
+            android:hint="@string/add_customer"
+            android:layout_toEndOf="@+id/textCustomer"
             android:layout_below="@+id/valueName"
             android:padding="4dp"/>
 

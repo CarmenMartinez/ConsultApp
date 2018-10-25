@@ -7,7 +7,7 @@ package com.wired.ctapp.consultall.com.wired.ctapp.consultall.utils;
 public class Project {
     private String name;
     private String company;
-    private String address;
+    private String customer;
     private String description;
 
     public Project (){
@@ -30,12 +30,12 @@ public class Project {
         this.company = company;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCustomer() {
+        return customer;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 
     public String getDescription() {
