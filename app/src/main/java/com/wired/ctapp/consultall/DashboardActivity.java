@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.wired.ctapp.consultall.com.wired.ctapp.consultall.utils.Project;
+import com.wired.ctapp.consultall.projects.ResponderActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class DashboardActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addProject = new Intent(getApplicationContext(), CaptureProjectActivity.class);
+                Intent addProject = new Intent(getApplicationContext(), ResponderActivity.class);
                 startActivity(addProject);
             }
         });
