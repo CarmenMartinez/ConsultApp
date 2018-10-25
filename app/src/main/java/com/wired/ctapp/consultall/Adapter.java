@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.wired.ctapp.consultall.com.wired.ctapp.consultall.utils.Project;
+import com.wired.ctapp.consultall.projects.ResponderActivity;
 
 import java.util.ArrayList;
 
@@ -46,10 +47,18 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.project, parent, false);
-        Holder vh = new Holder(v);
-        return vh;
+    public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
+        final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.project, parent, false);
+        final Holder h = new Holder(v);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DetailActivity.class);
+                i.putExtra(ResponderActivity.PROJECT_NAME, h.name.getText().toString());
+                context.startActivity(i);
+            }
+        });
+        return h;
     }
 
     @Override

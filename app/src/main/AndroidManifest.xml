@@ -22,18 +22,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".projects.ResponderActivity"
-            android:label="@string/title_activity_responder"
-            android:theme="@style/AppTheme.NoActionBar">
 
-
-        </activity>
         <activity android:name=".DashboardActivity" />
         <activity
             android:name=".CaptureProjectActivity"
             android:label="@string/title_activity_capture_project"
             android:theme="@style/AppTheme.NoActionBar" />
+        
+        <activity
+            android:name=".DetailActivity"
+            android:label="Detalle"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wired.ctapp.consultall.DashboardActivity" />
+
+        </activity>
+        
+        <activity
+            android:name=".projects.ResponderActivity"
+            android:label="@string/title_activity_responder"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wired.ctapp.consultall.DashboardActivity" />
+        </activity>
     </application>
 
 </manifest>
