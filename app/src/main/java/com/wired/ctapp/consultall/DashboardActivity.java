@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.wired.ctapp.consultall.com.wired.ctapp.consultall.utils.Project;
 import com.wired.ctapp.consultall.projects.ResponderActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private Adapter mAdapter;
+    public Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     private FloatingActionButton floatingActionButton;
@@ -29,8 +30,8 @@ public class DashboardActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addProject = new Intent(getApplicationContext(), ResponderActivity.class);
-                startActivity(addProject);
+                Intent addProject = new Intent(getApplicationContext(), CaptureProjectActivity.class);
+                startActivityForResult(addProject, 0);
             }
         });
 
@@ -45,16 +46,38 @@ public class DashboardActivity extends AppCompatActivity {
 
         Project project = new Project();
         project.setName("ConsulApp");
-        project.setAddress("Iteso");
+        project.setCustomer("Iteso");
         project.setDescription("Proyecto de desarrollo de aplicación móvil para" +
                                 " consultoría");
 
         mAdapter = new Adapter(this);
         recyclerView.setAdapter(mAdapter);
 
-        for(int i = 0; i < 10; i++){
             mAdapter.addProject(project);
-        }
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case 0:
+                if(resultCode == RESULT_OK){
+                    String nameProject = data.getStringExtra("Name");
+                    String company = data.getStringExtra("Company");
+                    String description = data.getStringExtra("Description");
+                    String date = data.getStringExtra("Date");
+                    String customer = data.getStringExtra("Customer");
+
+                    Project project = new Project();
+                    project.setName(nameProject);
+                    project.setCompany(company);
+                    project.setDescription(description);
+                    project.setCustomer(customer);
+
+                    mAdapter.addProject(project);
+                }
+                break;
+
+        }
     }
 }

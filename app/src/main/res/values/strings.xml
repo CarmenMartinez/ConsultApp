@@ -6,7 +6,7 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_email">This email customer is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
@@ -17,8 +17,8 @@
 
     <string name="name">Name:</string>
     <string name="add_name">Add name</string>
-    <string name="address">Address:</string>
-    <string name="add_address">Add Address</string>
+    <string name="customer">Customer:</string>
+    <string name="add_customer">Add Customer</string>
     <string name="logo_desc">Logo</string>
     <string name="add_description">Add Description</string>
     <string name="description">Description</string>

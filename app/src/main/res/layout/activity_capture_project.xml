@@ -34,6 +34,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/valueProjectName"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginEnd="16dp"
@@ -52,6 +53,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/valueCompany"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginEnd="16dp"
@@ -70,6 +72,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/valueDescription"
             android:layout_width="match_parent"
             android:layout_height="144dp"
             android:layout_marginEnd="16dp"
@@ -88,6 +91,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/valueDate"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginEnd="16dp"
@@ -106,6 +110,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/valueCustomer"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginEnd="16dp"
@@ -114,6 +119,7 @@
             android:background="@android:drawable/edit_text"/>
 
         <Button
+            android:id="@+id/project_add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"

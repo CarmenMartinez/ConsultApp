@@ -34,7 +34,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         public Holder(View v){
             super(v);
             name = (TextView) v.findViewById(R.id.valueName);
-            address = (TextView) v.findViewById(R.id.valueAddress);
+            address = (TextView) v.findViewById(R.id.valueCustomer);
             description = (TextView) v.findViewById(R.id.description);
             add = (ImageButton) v.findViewById(R.id.view_project);
             delete = (ImageButton) v.findViewById(R.id.delete_project);
@@ -65,7 +65,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         Holder h = (Holder)holder;
         h.name.setText(data.get(position).getName());
-        h.address.setText(data.get(position).getAddress());
+        h.address.setText(data.get(position).getCustomer());
         h.description.setText(data.get(position).getDescription());
 
     }
